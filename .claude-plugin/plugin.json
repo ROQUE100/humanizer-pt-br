@@ -1,14 +1,23 @@
 {
-  "name": "humanizer",
-  "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.",
-  "version": "3.1.0",
+  "name": "humanizer-pt-br",
+  "description": "Reescreva textos com aparência de IA para que soem como o autor, sem mudar o conteúdo.",
+  "version": "3.1.1",
   "author": {
     "name": "blader",
     "url": "https://github.com/blader"
   },
-  "homepage": "https://github.com/blader/humanizer",
-  "repository": "https://github.com/blader/humanizer",
+  "homepage": "https://github.com/ROQUE100/humanizer-pt-br",
+  "repository": "https://github.com/ROQUE100/humanizer-pt-br",
   "license": "MIT",
-  "keywords": ["writing", "editing", "humanize", "prose", "style"],
-  "skills": ["./"]
+  "keywords": [
+    "escrita",
+    "edicao",
+    "humanizar",
+    "prosa",
+    "estilo",
+    "pt-br"
+  ],
+  "skills": [
+    "./"
+  ]
 }

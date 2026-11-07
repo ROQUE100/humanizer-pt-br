@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Questions, ideas, and thanks
+  - name: Discussões do projeto original
     url: https://github.com/blader/humanizer/discussions
-    about: Ask how to use Humanizer, share results, or say thanks.
-  - name: AI detectors still flag the output
-    url: https://github.com/blader/humanizer#humanizer
-    about: Getting past AI detectors is not a goal. Humanizer edits for human readers.
+    about: Dúvidas gerais, ideias e resultados no projeto original. Para problemas desta tradução, use os formulários de issues deste repositório.
+  - name: Detectores de IA ainda sinalizam o resultado
+    url: https://github.com/ROQUE100/humanizer-pt-br#humanizer-pt-br
+    about: Passar por detectores de IA não é um objetivo. O Humanizer edita para leitores humanos.

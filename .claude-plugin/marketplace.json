@@ -1,18 +1,25 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "humanizer",
+  "name": "humanizer-pt-br",
   "owner": {
-    "name": "blader",
-    "url": "https://github.com/blader"
+    "name": "ROQUE100",
+    "url": "https://github.com/ROQUE100"
   },
-  "description": "Install Humanizer as a Claude plugin.",
+  "description": "Instale o Humanizer PT-BR como plugin do Claude.",
   "plugins": [
     {
-      "name": "humanizer",
+      "name": "humanizer-pt-br",
       "source": "./",
-      "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.",
+      "description": "Reescreva textos com aparência de IA para que soem como o autor, sem mudar o conteúdo.",
       "license": "MIT",
-      "keywords": ["writing", "editing", "humanize", "prose", "style"]
+      "keywords": [
+        "escrita",
+        "edicao",
+        "humanizar",
+        "prosa",
+        "estilo",
+        "pt-br"
+      ]
     }
   ]
 }

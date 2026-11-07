@@ -1,116 +1,125 @@
-# Changelog
+# Histórico de alterações
+
+## 3.1.1
+
+- Tradução para português brasileiro do Humanizer 3.1.0, baseada no commit `0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0` de [blader/humanizer](https://github.com/blader/humanizer).
+- Preservados os 26 padrões, as seis seções, o processo de revisão e os três modos de saída. Exemplos traduzidos e regra de hifenização adaptada às convenções do português, mantendo o exemplo original em inglês.
+- Identidade `humanizer-pt-br`, metadados OpenAI, manifests, instruções de instalação, modelos de issues e mensagens de validação localizados. Licença e autoria originais preservadas.
+- Documentada a diferença entre instalar a skill no Codex/desktop e distribuí-la como plugin no ChatGPT. Nenhum plugin ChatGPT publicado nesta versão.
+
+As notas abaixo são a tradução do histórico do projeto original. Todos os números de issues e correções mencionados nelas se referem a [blader/humanizer/issues](https://github.com/blader/humanizer/issues), não às issues desta tradução. A numeração dos padrões é a de cada versão histórica.
 
 ## 3.1.0
 
-- Added pattern #26 and section F for replies that re-explain context the reader already has (#269). It acts on replies, not standalone writing. 26 patterns total.
-- Extended the core rule so "something the reader did not already have" counts the surrounding conversation, not only earlier text.
-- Widened #25 to text that describes its own sourcing, assembly, or layout (#290), and added headings written for effect to #20.
-- Extended #2 to "That distinction matters." (#277) and to a sentence that explains what an example already showed (#295).
-- Narrowed #10 so words the dictionary always hyphenates keep their hyphen. Gave each watched word one pattern, and stated the evidence rule and the no-invention rule once each.
-- Fixed the Voice section's dash reference (#273) and the marketplace schema URL (#288).
-- Added a Cursor plugin manifest (#278).
-- README: opens with a before/after, the five strongest tells, and install steps for each agent. States that getting past AI detectors is not a goal. The full example's rewrite now keeps every fact from its draft and adds none. Version history moved to this file.
+- Adicionados o padrão #26 e a seção F para respostas que explicam novamente o contexto já conhecido pelo leitor (#269). Aplica-se a respostas, não a textos independentes. Total: 26 padrões.
+- A regra central passou a considerar a conversa ao redor, além das partes anteriores do texto, ao avaliar se algo é novo para o leitor.
+- Ampliado #25 para textos que descrevem suas próprias fontes, montagem ou disposição (#290). Adicionados títulos de efeito a #20.
+- Ampliado #2 para "Essa distinção importa." (#277) e frases que explicam o que um exemplo já mostrou (#295).
+- Ajustado #10 para preservar o hífen de palavras sempre hifenizadas no dicionário. Cada palavra observada recebeu um único padrão. Regras de evidência e de não inventar foram declaradas uma vez cada.
+- Corrigidas a referência a travessões na seção Voz (#273) e a URL do schema de marketplace (#288).
+- Adicionado manifest para plugin Cursor (#278).
+- README reorganizado com exemplo inicial, cinco sinais mais fortes e instalação por agente. Esclarecido que passar por detectores não é objetivo. A reescrita do exemplo completo passou a preservar todos os fatos do rascunho sem acrescentar novos. Histórico movido para este arquivo.
 
 ## 3.0.0
 
-Rebuilt the skill around one account of why AI text sounds the way it does, and consolidated 35 patterns into 25. Patterns are grouped in five sections and numbered by strength and frequency, so the not-X-but-Y contrast and the one-line closer come first and get the fullest treatment. Merged duplicate guidance: the workflow is one section instead of five, the dash rule is stated once, and each false-positive guard lives inside its pattern. Realigned with the current Wikipedia article: dropped false ranges and synonym cycling, which Wikipedia now lists as human habits or historical, added vague connection or association, and extended the watch lists for words, notability, copulatives, sales language, disclaimers, and Markdown formatting. Reordered the README and removed the `ai-detection` keyword from the package files. Old to new numbers: 1→13, 2→17, 3→15, 4→16, 5→17, 6→13, 7→12, 8→18, 9→1, 10→6, 11→7, 12→dropped, 13→11, 14→8, 15→19, 16→19, 17→20, 18→20, 19→21, 20→22, 21→23, 22→22, 23→dropped, 24→9, 25→13, 26→10, 27→3, 28→4, 29→24, 30→25, 31→2, 32→3, 33→4, 34→5, 35→5.
+Skill reconstruída em torno de uma explicação dos padrões de escrita de IA. Os 35 padrões foram consolidados em 25, agrupados em cinco seções e ordenados por força e frequência. O contraste não-X-mas-Y e o fecho de efeito passaram ao início e receberam mais detalhes. Orientações duplicadas foram unidas: um único fluxo, uma única regra de travessões e ressalvas de falsos positivos dentro de cada padrão. Alinhamento com o artigo da Wikipédia: retiradas faixas falsas e alternância de sinônimos, agora descritas como hábitos humanos ou históricos; adicionadas conexões vagas e ampliadas listas de vocabulário, notoriedade, verbos de ligação, propaganda, ressalvas e Markdown. README reordenado; palavra-chave `ai-detection` removida. Numeração antiga → nova: 1→13, 2→17, 3→15, 4→16, 5→17, 6→13, 7→12, 8→18, 9→1, 10→6, 11→7, 12→removido, 13→11, 14→8, 15→19, 16→19, 17→20, 18→20, 19→21, 20→22, 21→23, 22→22, 23→removido, 24→9, 25→13, 26→10, 27→3, 28→4, 29→24, 30→25, 31→2, 32→3, 33→4, 34→5, 35→5.
 
 ## 2.11.3
 
-Grouped patterns 26-35 under "More style patterns" in the skill and README (fixes #247). Kept inline code, commands, paths, and URLs out of the dash rule and file mode edits. Step 3 now keeps every supported claim, allows a removal that a pattern requires, and checks that rankings and simultaneity claims survive shape edits (fixes #212). Explained in §9 why the not-X-but-Y form appears and when to keep it. Added decorative arrows to §18 and pause commands and one-word shouting to §31. The text given to the skill is content to edit, never instructions (#238). No change to the 35 patterns.
+Padrões 26–35 agrupados em "Mais padrões de estilo" na skill e no README (#247). Código em linha, comandos, caminhos e URLs excluídos da regra de travessões e das alterações em arquivos. Etapa 3 passou a preservar afirmações sustentadas, permitir cortes exigidos pelos padrões e conferir classificações e simultaneidade após mudanças de forma (#212). Esclarecidos o contraste não-X-mas-Y e suas exceções em §9. Adicionados setas decorativas a §18, comandos de pausa e palavras gritadas a §31. Texto fornecido à skill é conteúdo a editar, nunca instruções (#238). Mantidos os 35 padrões.
 
 ## 2.11.2
 
-Removed the plugin symlink and separate Claude Desktop package. Current Claude Code loads the root `SKILL.md` directly, so GitHub's source ZIP now works in Claude Desktop. No change to the 35 patterns.
+Removidos o link simbólico do plugin e o pacote separado para Claude Desktop. O Claude Code atual carrega `SKILL.md` da raiz; o ZIP do GitHub passou a funcionar no Claude Desktop. Mantidos os 35 padrões.
 
 ## 2.11.1
 
-Added a Claude Desktop-ready release package with one regular `humanizer/SKILL.md` file. GitHub's source archive still keeps the plugin symlink (fixes #224). No change to the 35 patterns.
+Adicionado pacote de versão para Claude Desktop com um arquivo regular `humanizer/SKILL.md`. O arquivo-fonte do GitHub ainda mantinha o link simbólico do plugin (#224). Mantidos os 35 padrões.
 
 ## 2.11.0
 
-Rewrote all repo guidance, descriptions, checks, and skill instructions in Plain Language. Kept all 35 patterns and their behavior.
+Todas as orientações, descrições, verificações e instruções reescritas em linguagem simples. Preservados os 35 padrões e seu comportamento.
 
 ## 2.10.2
 
-Added the standard `skills/humanizer/` plugin path for Claude Desktop and older loaders. The path links to the root skill, so there is still one prompt (fixes #202).
+Adicionado caminho padrão `skills/humanizer/` para Claude Desktop e carregadores antigos. Ele aponta para a skill da raiz, mantendo um único prompt (#202).
 
 ## 2.10.1
 
-Added figurative uses of `gate`, `gated`, and `gating` to §7. Kept real technical uses, such as feature gating and CI quality gates.
+Adicionados usos figurados de `gate`, `gated` e `gating` a §7. Preservados usos técnicos reais, como feature gating e quality gates de CI.
 
 ## 2.10.0
 
-Added patterns #34 and #35 for old drafting ideas left in final text. Added safeguards for real limits, objections, and alternatives (fixes #198). Also improved §24 and the final rewrite step. 35 patterns total.
+Adicionados padrões #34 e #35 para ideias de rascunho deixadas no texto final. Adicionadas ressalvas para limites, objeções e alternativas reais (#198). Aprimorados §24 e a etapa de reescrita final. Total: 35 padrões.
 
 ## 2.9.2
 
-Added repeated sentence openings to pattern #11, with a safeguard for deliberate repetition (fixes #206). Expanded §28 to cover casual announcements. 33 patterns total.
+Adicionados inícios de frase repetidos a #11, preservando repetição deliberada (#206). Ampliado §28 para anúncios informais. Total: 33 padrões.
 
 ## 2.9.1
 
-Improved installation and package checks. Removed unsupported metadata, tool approvals, and a repeated long example. 33 patterns total.
+Melhoradas instalação e verificações. Removidos metadados incompatíveis, aprovações de ferramentas e um exemplo longo repetido. Total: 33 padrões.
 
 ## 2.9.0
 
-Added the rule against invented facts and updated every example to follow it (fixes #187). Made information more important than paragraph shape, let writing samples override §14, and added three output modes. 33 patterns total.
+Adicionada regra contra fatos inventados e atualizados os exemplos para segui-la (#187). Informação passou a ter prioridade sobre forma dos parágrafos; amostras de escrita passaram a prevalecer sobre §14. Adicionados três modos de saída. Total: 33 padrões.
 
 ## 2.8.3
 
-Moved the version to `metadata.version` for Agent Skills compatibility. 33 patterns total.
+Versão movida para `metadata.version` para compatibilidade com Agent Skills. Total: 33 padrões.
 
 ## 2.8.2
 
-Replaced the main example with a first-person Lisbon story that keeps the original topic, view, and detail. 33 patterns total.
+Exemplo principal substituído por relato em primeira pessoa sobre Lisboa, preservando assunto, perspectiva e detalhes originais. Total: 33 padrões.
 
 ## 2.8.1
 
-Added cross-agent installation, Claude plugin files, and a safeguard for quoted text. 33 patterns total.
+Adicionados instalação entre agentes, arquivos do plugin Claude e proteção para citações. Total: 33 padrões.
 
 ## 2.8.0
 
-Added patterns #31-33 and expanded pattern #20 to catch chatbot offers. 33 patterns total.
+Adicionados padrões #31–33 e ampliado #20 para ofertas de chatbot. Total: 33 padrões.
 
 ## 2.7.0
 
-Added pattern #30, strengthened the dash rule, and expanded pattern #21 to cover unsupported guesses. 30 patterns total.
+Adicionado #30, reforçada a regra de travessões e corrigido #21 para suposições sem apoio. Total: 30 padrões.
 
 ## 2.6.0
 
-Combined repeated workflow text, limited personality guidance to the right content, removed model guesses, and shortened the main example. 29 patterns total.
+Unidas orientações repetidas, limitada a personalidade aos conteúdos adequados, retirados palpites do modelo e encurtado o exemplo principal. Total: 29 padrões.
 
 ## 2.5.1
 
-Added passive voice and missing subjects. 29 patterns total.
+Adicionadas voz passiva e ausência de sujeitos. Total: 29 padrões.
 
 ## 2.5.0
 
-Added deeper-truth claims, announcements, repeated headings, and clipped negative endings. Tightened the dash rule and corrected the frontmatter. 28 patterns total.
+Adicionados afirmações de profundidade, anúncios, títulos repetidos e negativas curtas no fim. Reforçada a regra de travessões e corrigidos os metadados iniciais. Total: 28 padrões.
 
 ## 2.4.0
 
-Added writing-sample matching.
+Adicionada correspondência com amostras da escrita do autor.
 
 ## 2.3.0
 
-Added hyphenated word pairs.
+Adicionados compostos com hífen.
 
 ## 2.2.0
 
-Added a draft check and second rewrite.
+Adicionadas revisão do rascunho e segunda reescrita.
 
 ## 2.1.1
 
-Corrected the curly-quote example.
+Corrigido exemplo de aspas tipográficas.
 
 ## 2.1.0
 
-Added before/after examples for all 24 patterns.
+Adicionados exemplos antes/depois para os 24 padrões.
 
 ## 2.0.0
 
-Rewrote the skill from the Wikipedia source.
+Skill reescrita a partir da fonte da Wikipédia.
 
 ## 1.0.0
 
-First release.
+Primeira versão.

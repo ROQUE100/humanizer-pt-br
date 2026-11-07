@@ -1,54 +1,55 @@
-# Guide for agents
+# Guia para agentes
 
-This file explains how to change Humanizer without breaking its package or prompt.
+Este arquivo explica como alterar o Humanizer PT-BR sem quebrar o pacote ou o prompt.
 
-## What this repo contains
+## Conteúdo do repositório
 
-Humanizer is an agent skill written in Markdown. `SKILL.md` is the prompt that agents read. The repo has no build step.
+O Humanizer é uma skill escrita em Markdown. `SKILL.md` é o prompt lido pelos agentes. Não há etapa de compilação.
 
-Keep the skill portable. Do not write instructions that limit it to one or two agent tools.
+Mantenha a portabilidade. Não limite as instruções a um ou dois agentes. Esta tradução acompanha o projeto original em português brasileiro; evite mudanças de comportamento sem necessidade.
 
-## Key files
+## Arquivos principais
 
-- `SKILL.md` is the source of truth and the repo's only skill file. It contains portable YAML metadata, an account of why AI text sounds the way it does, and numbered patterns grouped in six sections and ordered by strength and frequency.
-- `README.md` explains installation, use, and patterns.
-- `CHANGELOG.md` holds the release notes, newest first. Old notes keep the pattern numbers their release used.
-- `.claude-plugin/plugin.json` describes the Claude plugin and points its skill loader at the root `SKILL.md`.
-- `.claude-plugin/marketplace.json` lets users add this repo as a Claude marketplace.
-- `.cursor-plugin/plugin.json` describes the Cursor plugin. Omit a `skills` path so Cursor loads the root `SKILL.md`.
-- `agents/openai.yaml` holds the display name, short description, and default prompt for OpenAI-compatible agents.
-- `scripts/validate-package.py` checks package files and shared values.
+- `SKILL.md` é a fonte de verdade e o único arquivo de skill. Contém metadados YAML portáveis, a explicação dos padrões de escrita de IA e padrões numerados em seis seções, por força e frequência.
+- `README.md` explica instalação, uso e padrões.
+- `CHANGELOG.md` contém notas de versão, das mais recentes às antigas. Notas antigas mantêm a numeração de sua versão.
+- `.claude-plugin/plugin.json` descreve o plugin Claude e aponta o carregador para `SKILL.md` na raiz.
+- `.claude-plugin/marketplace.json` permite adicionar este repositório como marketplace do Claude.
+- `.cursor-plugin/plugin.json` descreve o plugin Cursor. Omita `skills` para carregar o `SKILL.md` da raiz.
+- `agents/openai.yaml` contém nome de exibição, descrição curta e prompt padrão para agentes compatíveis com OpenAI.
+- `scripts/validate-package.py` verifica arquivos e valores compartilhados.
 
-## Rules for changes
+## Regras para alterações
 
-Keep `SKILL.md` and `README.md` in sync.
+Mantenha `SKILL.md` e `README.md` sincronizados.
 
-- **Patterns:** Patterns are numbered from 1 without gaps, strongest and most frequent first. A new tell earns a pattern only when no existing pattern already implies it; prefer folding it into an existing pattern. If you add, remove, or renumber a pattern, update the README tables, the README section title, and every §reference. The validator derives the count from the headings and checks that README pattern names match them.
-- **Version:** Keep the same version in `SKILL.md` under `metadata.version`, the first `CHANGELOG.md` heading, `.claude-plugin/plugin.json`, and `.cursor-plugin/plugin.json`. Do not add a top-level `version` field to the skill.
-- **Compatibility:** Keep install and use instructions neutral across agents. Names such as Claude Code, Cursor, OpenCode, and Codex are examples, not limits.
-- **Description:** The plugin manifests use the first sentence of the `SKILL.md` description.
-- **Length:** Every word of `SKILL.md` is read on each use. The validator caps it at 5,500 words; a change that adds words should earn them.
-- **History:** Add a short `CHANGELOG.md` note for any behavior change or non-obvious fix.
-- **Checks:** Before publishing, run `python3 scripts/validate-package.py`, `npx skills add . --list`, and `claude plugin validate .`.
+- **Padrões:** Numere a partir de 1, sem lacunas, dos mais fortes e frequentes aos demais. Crie um padrão apenas quando nenhum existente o cobrir; prefira integrar o sinal a um padrão existente. Ao adicionar, remover ou renumerar, atualize tabelas, título da seção no README e referências §. O validador deriva a quantidade dos títulos e confere os nomes no README.
+- **Versão:** Mantenha a mesma versão em `metadata.version`, no primeiro título numérico de `CHANGELOG.md` e nos manifests Claude e Cursor. Não adicione `version` ao nível superior da skill.
+- **Compatibilidade:** Mantenha instruções de instalação e uso portáveis. Claude Code, Cursor, OpenCode e Codex são exemplos, não limites.
+- **Descrição:** Os manifests usam a primeira frase da descrição de `SKILL.md`.
+- **Tamanho:** Cada palavra de `SKILL.md` é lida a cada uso. O limite é 5.500 palavras; acréscimos precisam justificar seu custo.
+- **Histórico:** Registre mudanças de comportamento e correções não óbvias em `CHANGELOG.md`.
+- **Verificações:** Antes de publicar, execute `python3 scripts/validate-package.py`, `npx skills add . --list` e `claude plugin validate .`.
+- **Origem:** Preserve a licença MIT e a autoria original. Identifique adaptações desta tradução e mantenha referências históricas ao repositório de origem.
 
-## Writing style
+## Estilo de escrita
 
-Use Plain Language in code comments, prompts, documentation, descriptions, validation messages, and progress reports.
+Use linguagem simples em comentários, prompts, documentação, descrições, mensagens de validação e relatos de progresso.
 
-- Lead with the main point.
-- Use common words and active voice.
-- Keep sentences and paragraphs short.
-- Use one term for the same item.
-- Use `must` for requirements.
-- Use headings, lists, and tables when they help the reader.
-- Remove repeated or unnecessary words.
-- Limit acronyms and explain technical terms.
-- Avoid double negatives.
-- Keep exact identifiers, commands, paths, schema fields, quotations, watched phrases, and behavior-bearing examples.
-- Keep the full technical meaning.
+- Comece pela ideia principal.
+- Use palavras comuns e voz ativa.
+- Prefira frases e parágrafos curtos.
+- Use o mesmo termo para o mesmo item.
+- Use "deve" para requisitos.
+- Use títulos, listas e tabelas quando ajudarem.
+- Remova palavras repetidas ou desnecessárias.
+- Limite siglas e explique termos técnicos.
+- Evite negativas duplas.
+- Preserve identificadores, comandos, caminhos, campos de schema, citações, expressões observadas e exemplos que determinam comportamento. Traduza a prosa dos exemplos sem perder o padrão demonstrado; adapte convenções exclusivas do inglês explicitamente.
+- Preserve todo o significado técnico.
 
-## Editing the skill
+## Edição da skill
 
-- Keep the YAML metadata valid.
-- Treat the prompt below the metadata as the product.
-- Prefer a short, clear instruction over another exception or repeated explanation.
+- Mantenha os metadados YAML válidos.
+- Trate o prompt abaixo dos metadados como o produto.
+- Prefira uma instrução breve e clara a novas exceções ou explicações repetidas.
